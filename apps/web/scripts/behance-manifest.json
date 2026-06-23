@@ -1,0 +1,132 @@
+{
+  "note": "Generated from the Behance portfolio. cover = /projects/404/<file>; images = /project_modules/disp/<file>. Used by fetch-behance-assets.mjs.",
+  "projects": [
+    {
+      "id": 218093325,
+      "cover": "155ff7218093325.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",
+      "images": [
+        "713c7a218093325.679b77de9b9e7.png",
+        "8331f2218093325.679b77de9b2cf.png",
+        "b81bff218093325.679b77de998fb.png",
+        "27babc218093325.679b77de9a018.png",
+        "9ed9fe218093325.679b77de9a70d.png",
+        "eee991218093325.679b77de99201.png",
+        "6a23fc218093325.679b77de9826e.png",
+        "ebd37c218093325.679b77de97db5.png",
+        "785458218093325.679b77de98708.png",
+        "ac0a98218093325.679b77de98b60.png",
+        "c74da7218093325.679b77de9ae3f.png",
+        "2664c4218093325.679b7cc67255f.png",
+        "c9cf8e218093325.679b7cc671d6c.png",
+        "0fddaa218093325.679b7cc671634.png",
+        "370b84218093325.679b7cc672d21.png"
+      ]
+    },
+    {
+      "id": 230113303,
+      "cover": "465376230113303.Y3JvcCwxNTY0LDEyMjMsMCwxNzA.png",
+      "images": ["688524230113303.687110491557a.jpg"]
+    },
+    {
+      "id": 219265699,
+      "cover": "b6870a219265699.Y3JvcCwxNDAwLDEwOTUsMCwxNTI.jpg",
+      "images": [
+        "29f217219265699.67b5855ee8cd3.png",
+        "9d2930219265699.67b46f80efb0c.jpg",
+        "da2bdb219265699.67caadc96643f.png",
+        "e77090219265699.67caadc965f6e.png",
+        "a9d911219265699.67caadc9659f4.png",
+        "91f766219265699.67caadc9650a0.png"
+      ]
+    },
+    {
+      "id": 207406623,
+      "cover": "ecf920207406623.Y3JvcCwzNTA2LDI3NDIsMCwxMTEw.jpg",
+      "images": [
+        "106720207406623.66dd3df7175f7.jpg",
+        "be277d207406623.66dd3df7182e7.jpg",
+        "f3c5d5207406623.66dd3df717ada.jpg",
+        "e15f22207406623.66dd3df717104.jpg",
+        "d4e676207406623.66dd3df7168a4.png"
+      ]
+    },
+    {
+      "id": 203885161,
+      "cover": "bddb39203885161.Y3JvcCw5NjQsNzU0LDAsMA.jpg",
+      "images": [
+        "f7b4a5203885161.67aef3dcc60fb.jpg",
+        "291879203885161.67aef3dcc5be1.jpg",
+        "11015e203885161.67aef3dcc6958.jpg",
+        "782870203885161.67aef3dcc2d44.jpg",
+        "31378e203885161.67aef3dcc1092.jpg",
+        "f880b8203885161.67aef3dcc38f5.jpg",
+        "a75eb7203885161.67aef3dcc7cbb.jpg",
+        "9abd7a203885161.67aef3dcc27bc.jpg",
+        "1d7a8c203885161.67aef3dcc31cb.jpg",
+        "8c88b3203885161.67aef3dcc3fde.jpg"
+      ]
+    },
+    {
+      "id": 204868393,
+      "cover": "41d7c5204868393.Y3JvcCwyMDQ4LDE2MDEsMCwyMjM.jpg",
+      "images": [
+        "fdd6e9204868393.67aef24a93787.jpg",
+        "7662fe204868393.67aef24a93e52.jpg",
+        "390426204868393.67aef24a9326d.jpg",
+        "8835f3204868393.67aef24a92b0b.jpg",
+        "9239dc204868393.67aef24a94349.jpg"
+      ]
+    },
+    {
+      "id": 203884379,
+      "cover": "c6dd11203884379.Y3JvcCw5NjUsNzU0LDAsODM.jpg",
+      "images": [
+        "f705c3203884379.67aeefa53e75e.jpg",
+        "43d0e7203884379.67aeefa53de67.jpg",
+        "296621203884379.67aeefa53e319.jpg",
+        "f957ec203884379.67aeefa53ee2d.jpg",
+        "f6735c203884379.67aeefa53d7bb.jpg"
+      ]
+    },
+    {
+      "id": 206396053,
+      "cover": "ffeca7206396053.Y3JvcCwxNTM0LDEyMDAsNzMyLDA.jpg",
+      "images": [
+        "9b5813206396053.67a0ccb0239b3.jpg",
+        "73f25e206396053.67a0ccb023e25.jpg",
+        "423cab206396053.67a0ccb024260.jpg",
+        "21ccc5206396053.66cc3797dfb47.jpg"
+      ]
+    },
+    {
+      "id": 206395099,
+      "cover": "fc60f8206395099.Y3JvcCwxMjI2LDk1OSwyNyww.jpg",
+      "images": ["e4cd11206395099.66cc329852bf6.jpg"]
+    },
+    {
+      "id": 219263895,
+      "cover": "d7553e219263895.Y3JvcCw0NTAwLDM1MTksMCw0OTA.jpg",
+      "images": ["669c21219263895.67aeed61247d0.jpg", "c4cb1f219263895.67aeed6125186.png"]
+    },
+    {
+      "id": 205075921,
+      "cover": "bf8750205075921.Y3JvcCwxMzc5LDEwNzksMjY5LDA.jpg",
+      "images": []
+    },
+    {
+      "id": 203884783,
+      "cover": "6bbd3e203884783.Y3JvcCwxMDI0LDgwMCwwLDExMQ.jpg",
+      "images": []
+    },
+    {
+      "id": 203883595,
+      "cover": "b42925203883595.Y3JvcCwzMDczLDI0MDQsMjg5LDA.jpg",
+      "images": []
+    },
+    {
+      "id": 203383877,
+      "cover": "7eb717203383877.Y3JvcCwxOTk5LDE1NjQsMCw5MzA.png",
+      "images": ["a6b366203383877.67b589ad0cacd.png", "32a0a4203383877.67b589ad0c27a.jpg"]
+    }
+  ]
+}
