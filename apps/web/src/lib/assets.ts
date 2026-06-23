@@ -34,7 +34,7 @@ export function moduleRemote(file: string, size: ModuleSize = 'hd'): string {
 export interface VideoEmbed {
   provider: 'youtube' | 'facebook'
   id: string
-  /** Original page URL — required for Facebook embeds, optional link-out for YouTube. */
+  /** Original page URL - required for Facebook embeds, optional link-out for YouTube. */
   href?: string
   /** Vertical aspect (reels) render in portrait. */
   portrait?: boolean

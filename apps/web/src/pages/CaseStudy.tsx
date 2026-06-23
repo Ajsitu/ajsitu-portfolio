@@ -185,7 +185,7 @@ export function CaseStudy() {
           </div>
         </Reveal>
 
-        {/* Videos — play inline */}
+        {/* Videos - play inline */}
         {p.videos && p.videos.length > 0 && (
           <div className="mt-8">
             <Eyebrow>Watch the reel</Eyebrow>
@@ -208,7 +208,7 @@ export function CaseStudy() {
                   <SmartImg
                     src={moduleUrl(p.id, file, 'source')}
                     fallbacks={[moduleRemote(file, 'source'), moduleRemote(file, 'hd'), moduleRemote(file, 'disp')]}
-                    alt={`${p.name} — ${i + 1}`}
+                    alt={`${p.name} ${i + 1}`}
                     className="w-full object-cover"
                   />
                 </div>

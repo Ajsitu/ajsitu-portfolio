@@ -62,13 +62,107 @@ function Hero() {
   )
 }
 
+function ServiceVisual({ title, icon, index }: { title: string; icon: string; index: number }) {
+  const renderMark = () => {
+    if (title === 'Front-End') {
+      return (
+        <div className="relative z-10 w-[72%] rounded-md border border-brand/55 bg-char-deep/80 p-3 shadow-[0_18px_40px_-22px_rgba(254,81,2,0.8)]">
+          <div className="mb-3 flex gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+            <span className="h-1.5 w-1.5 rounded-full bg-vanilla/30" />
+            <span className="h-1.5 w-1.5 rounded-full bg-vanilla/20" />
+          </div>
+          <div className="space-y-2">
+            <span className="block h-1.5 w-4/5 rounded-full bg-vanilla/25" />
+            <span className="block h-1.5 w-2/3 rounded-full bg-brand" />
+            <span className="block h-1.5 w-5/6 rounded-full bg-vanilla/15" />
+          </div>
+          <span className="absolute -bottom-4 -right-4 font-pixel text-3xl text-brand">{icon}</span>
+        </div>
+      )
+    }
+
+    if (title === 'UI / UX') {
+      return (
+        <div className="relative z-10 h-[74%] w-[72%] rounded-lg border border-brand/55 bg-vanilla/[0.04] p-3">
+          <span className="absolute left-4 top-4 h-7 w-7 rounded-full border-2 border-brand bg-char-deep" />
+          <span className="absolute right-5 top-7 h-9 w-16 rounded-md border border-vanilla/25 bg-char-deep/80" />
+          <span className="absolute bottom-7 left-5 h-12 w-20 rounded-md border border-brand/45 bg-brand/15" />
+          <span className="absolute bottom-5 right-6 h-6 w-6 rotate-45 border border-vanilla/30" />
+          <span className="absolute left-[37%] top-[38%] h-2.5 w-2.5 rounded-full bg-brand shadow-[0_0_0_6px_rgba(254,81,2,0.14)]" />
+        </div>
+      )
+    }
+
+    if (title === 'Graphic Design') {
+      return (
+        <div className="relative z-10 h-[76%] w-[72%]">
+          <span className="absolute left-1 top-4 h-20 w-20 rounded-full bg-brand" />
+          <span className="absolute right-0 top-7 h-16 w-16 rounded-md border border-vanilla/25 bg-[#2d57ff]/80" />
+          <span className="absolute bottom-3 left-8 h-14 w-28 -rotate-6 rounded-md bg-vanilla text-char shadow-[0_18px_40px_-24px_rgba(255,250,238,0.8)]" />
+          <span className="absolute bottom-7 left-14 h-1.5 w-16 rounded-full bg-char" />
+          <span className="absolute bottom-12 left-14 h-1.5 w-10 rounded-full bg-brand" />
+        </div>
+      )
+    }
+
+    if (title === 'Video Editing') {
+      return (
+        <div className="relative z-10 h-[74%] w-[74%] rounded-md border border-brand/55 bg-char-deep/80 p-3">
+          <div className="grid h-full grid-rows-[1fr_auto] gap-3">
+            <div className="relative overflow-hidden rounded bg-vanilla/[0.06]">
+              <span className="absolute left-1/2 top-1/2 h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-y-[15px] border-l-[24px] border-y-transparent border-l-brand" />
+            </div>
+            <div className="grid grid-cols-5 gap-1.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i} className={`h-5 rounded-sm ${i === 2 ? 'bg-brand' : 'bg-vanilla/18'}`} />
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    return (
+      <div className="relative z-10 h-[74%] w-[72%] rounded-lg border border-brand/55 bg-char-deep/80 p-4">
+        <div className="flex h-full flex-col justify-between">
+          <span className="h-8 w-8 rounded-full bg-brand" />
+          <div className="space-y-2">
+            <span className="block h-2 w-full rounded-full bg-vanilla/25" />
+            <span className="block h-2 w-3/4 rounded-full bg-vanilla/15" />
+            <span className="block h-2 w-5/6 rounded-full bg-brand/80" />
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="h-7 w-7 rounded-md border border-vanilla/25" />
+            <span className="font-pixel text-2xl text-brand">{icon}</span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="relative flex aspect-[1/1.12] items-center justify-center overflow-hidden bg-[#141414]">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,250,238,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,250,238,0.055)_1px,transparent_1px)] bg-[size:18px_18px]" />
+      <div className="absolute left-3 top-3 flex gap-1.5">
+        <span className="h-2 w-2 rounded-full bg-brand" />
+        <span className="h-2 w-2 rounded-full bg-vanilla/25" />
+      </div>
+      <span className="absolute right-3 top-3 font-mono text-[10px] text-vanilla/30">0{index + 1}</span>
+      <span className="absolute inset-x-0 bottom-0 h-px bg-brand/45" />
+      <span className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-brand/15 blur-2xl" />
+      {renderMark()}
+    </div>
+  )
+}
+
 /* ---------------- About / Born to Build ---------------- */
 function About() {
   return (
     <section id="about" className="py-[clamp(80px,12vh,150px)]">
       <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-16">
         <Reveal>
-          <Eyebrow>About — Persona</Eyebrow>
+          <Eyebrow>About / Persona</Eyebrow>
         </Reveal>
         <Reveal as="h2" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
           Born to <span className="text-brand">Build</span>
@@ -81,11 +175,8 @@ function About() {
         <div className="mt-16 grid grid-cols-2 gap-[18px] md:grid-cols-3 lg:grid-cols-5">
           {profile.services.map((s, i) => (
             <Reveal key={s.title} delay={0.08 * (i + 1)}>
-              <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-vanilla/10 bg-char-soft transition duration-300 hover:-translate-y-2 hover:border-brand">
-                <div className="relative flex aspect-[1/1.15] items-center justify-center bg-gradient-to-br from-[#2a2a2a] to-[#161616]">
-                  <span className="font-pixel text-[46px] text-brand">{s.icon}</span>
-                  <span className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(254,81,2,0.18),transparent_60%)]" />
-                </div>
+              <div className="group flex h-full flex-col overflow-hidden rounded-lg border border-vanilla/10 bg-char-soft transition duration-300 hover:-translate-y-2 hover:border-brand hover:shadow-[0_24px_70px_-42px_rgba(254,81,2,0.75)]">
+                <ServiceVisual title={s.title} icon={s.icon} index={i} />
                 <div className="px-[18px] pb-6 pt-5">
                   <h3 className="mb-2.5 font-pixel text-xl">{s.title}</h3>
                   <p className="text-[13.5px] leading-snug text-vanilla/55">{s.body}</p>
@@ -105,7 +196,7 @@ function Timeline() {
     <section id="timeline" className="py-[clamp(80px,12vh,150px)]">
       <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-16">
         <Reveal>
-          <Eyebrow>About — Timeline</Eyebrow>
+          <Eyebrow>About / Timeline</Eyebrow>
         </Reveal>
         <div className="grid items-start gap-10 md:grid-cols-2 lg:gap-[90px]">
           <div>
@@ -218,7 +309,7 @@ function Featured() {
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla/55">
-            Live products I’ve designed and built — from a career platform to an AI marketing engine.
+            Live products I’ve designed and built, from a career platform to a digital marketing dashboard.
             Some of my production work is under NDA;{' '}
             <a href="#contact" className="text-brand underline-offset-4 hover:underline">
               more examples available on request
@@ -235,7 +326,7 @@ function Featured() {
               <div className={idx % 2 ? 'md:order-2' : ''}>
                 <Reveal>
                   <div className="mb-4 font-mono text-[13px] tracking-[0.15em] text-brand">
-                    / 0{idx + 1} — {p.kind}
+                    / 0{idx + 1} · {p.kind}
                   </div>
                 </Reveal>
                 <Reveal>
@@ -305,7 +396,7 @@ export function BrowserMock({
   blurb: string
   gradient: string
   badge: string
-  /** live site URL — enables the iframe preview when `live` is set */
+  /** live site URL - enables the iframe preview when `live` is set */
   url?: string
   live?: boolean
 }) {
@@ -340,7 +431,7 @@ export function BrowserMock({
 }
 
 /**
- * LivePreview — renders the real site in a lazily-loaded, scaled iframe so it
+ * LivePreview - renders the real site in a lazily-loaded, scaled iframe so it
  * looks like a live thumbnail inside the browser-mock. The branded gradient
  * sits behind it as a poster (and as a graceful fallback if a site refuses to
  * be framed). The whole surface links out to open the site in a new tab.
@@ -409,7 +500,7 @@ function LivePreview({
       {show && (
         <iframe
           src={url}
-          title={`${name} — live preview`}
+          title={`${name} live preview`}
           loading="lazy"
           tabIndex={-1}
           scrolling="no"
@@ -451,7 +542,7 @@ function MoreWork() {
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla/55">
-            Product, branding, event design, video and multimedia — every project from my Behance portfolio.
+            Product, branding, event design, video and multimedia from my Behance portfolio.
           </p>
         </Reveal>
         <div className="mt-14 grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">

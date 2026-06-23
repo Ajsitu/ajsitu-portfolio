@@ -50,7 +50,7 @@ export const featured: FeaturedProject[] = [
     kind: 'Web App · UI/UX · Front-End',
     badge: 'Live Demo',
     blurb:
-      'A career-development web app connecting people to career pathways, industry insights and employer connections. I designed and built the front-end — authentication and onboarding, the dashboard shell, and a responsive, accessible component system. (Some of my product work is under NDA; more examples available on request.)',
+      'A career-development web app connecting people to career pathways, industry insights and employer connections. I designed and built the front-end, including authentication, onboarding, the dashboard shell and a responsive component system. Some product work is under NDA, with more examples available on request.',
     features: ['Auth & Onboarding UI', 'Career Pathways Dashboard', 'Responsive Web App'],
     gradient: 'radial-gradient(circle at 30% 20%, #243b55, #0d1b2a)',
   },
@@ -62,7 +62,7 @@ export const featured: FeaturedProject[] = [
     kind: 'SaaS · UI Development',
     badge: 'Live Product',
     blurb:
-      'UI development at Ballo Innovations for an AI-powered digital advertising platform — bulk SMS, targeted WhatsApp message ads and data-driven campaign management. I built responsive interfaces optimised for usability, accessibility and performance.',
+      'UI development at Ballo Innovations for a digital advertising platform covering bulk SMS, targeted WhatsApp ads and campaign management. I built responsive interfaces focused on usability, accessibility and performance.',
     features: ['WhatsApp Marketing UI', 'Campaign Dashboard', 'Responsive Front-End'],
     gradient: 'radial-gradient(circle at 70% 30%, #3a1d00, #120a02)',
   },
@@ -74,7 +74,7 @@ export const featured: FeaturedProject[] = [
     kind: 'Web · UX Design',
     badge: 'Live Product',
     blurb:
-      'Web & UX work on Lusaka365 — a city guide for Lusaka covering events, stories and neighbourhoods. The brief: make “what’s on and where to go” effortless to browse, with a clean, locally-rooted visual identity.',
+      'Web and UX work on Lusaka365, a city guide for Lusaka covering events, stories and neighbourhoods. The brief was to make what is on and where to go easy to browse, with a clean local visual style.',
     features: ['City Guide UX', 'Events & Stories Layout', 'Responsive Web'],
     gradient: 'radial-gradient(circle at 30% 30%, #1a4d3e, #08130f)',
   },
@@ -84,14 +84,14 @@ export const behance: BehanceProject[] = [
   {
     id: 218093325,
     slug: 'zusa-waste-management',
-    name: 'ZUSA Waste Management — Final-Year Project',
+    name: 'ZUSA Waste Management: Final-Year Project',
     year: '2024',
     category: 'UI/UX · Web',
     url: 'https://www.behance.net/gallery/218093325/WEB-DESIGN-UXUI-BackEnd-2024-Final-Year-Project',
     tags: ['UI/UX', 'Web Design', 'Web App'],
     tools: ['Figma', 'Microsoft Visual Studio', 'PHP'],
     blurb:
-      'Final-year project: ZUSA Waste Management — a web-based system designed and built end-to-end, covering UI/UX, front-end development and database management.',
+      'Final-year project for ZUSA Waste Management: a web-based system designed and built end to end, covering UI/UX, front-end development and database management.',
     cover: '155ff7218093325.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png',
     images: [
       '713c7a218093325.679b77de9b9e7.png',
@@ -121,7 +121,7 @@ export const behance: BehanceProject[] = [
     tags: ['Logo Design', 'Branding', 'Visual Identity'],
     tools: ['Illustrator', 'Photoshop', 'Premiere Pro', 'After Effects'],
     blurb:
-      'Brand identity for Eco Flames charcoal briquettes — logo system, a red/green/grey palette, the tagline “Safer fire always”, plus social video graphics and flyers.',
+      'Brand identity for Eco Flames charcoal briquettes, including a logo system, red/green/grey palette, the tagline “Safer fire always”, social video graphics and flyers.',
     cover: '465376230113303.Y3JvcCwxNTY0LDEyMjMsMCwxNzA.png',
     images: ['688524230113303.687110491557a.jpg'],
   },
@@ -156,7 +156,7 @@ export const behance: BehanceProject[] = [
     tags: ['Event Branding', 'Creative Direction', 'Poster'],
     tools: ['Photoshop', 'Illustrator', 'Lightroom'],
     blurb:
-      'Full event-branding breakdown for the FLAWS album launch — ticket design, event and partnership posters, and social content, built on an emerald-green / sky-blue / red palette.',
+      'Full event-branding breakdown for the FLAWS album launch, including ticket design, event posters, partner posters and social content built on an emerald-green, sky-blue and red palette.',
     cover: 'ecf920207406623.Y3JvcCwzNTA2LDI3NDIsMCwxMTEw.jpg',
     images: [
       '106720207406623.66dd3df7175f7.jpg',
@@ -176,7 +176,7 @@ export const behance: BehanceProject[] = [
     tags: ['Event Branding', 'Advertising', 'Countdown'],
     tools: ['Photoshop'],
     blurb:
-      'Full event package for the ICU PCM charity concert — advertising, branding and a countdown series.',
+      'Full event package for the ICU PCM charity concert, including advertising, branding and a countdown series.',
     cover: 'bddb39203885161.Y3JvcCw5NjQsNzU0LDAsMA.jpg',
     images: [
       'f7b4a5203885161.67aef3dcc60fb.jpg',
@@ -194,7 +194,7 @@ export const behance: BehanceProject[] = [
   {
     id: 204868393,
     slug: 'icu-guest-day',
-    name: 'Guest Day — ICU Adventist Ministries',
+    name: 'Guest Day: ICU Adventist Ministries',
     year: '2023',
     category: 'Event Design',
     url: 'https://www.behance.net/gallery/204868393/Guest-Day-Event-By-ICU-adventist-Ministries-2023',
@@ -213,7 +213,7 @@ export const behance: BehanceProject[] = [
   {
     id: 203884379,
     slug: 'music-with-love',
-    name: 'Music with Love — Nothando',
+    name: 'Music with Love: Nothando',
     year: '2023',
     category: 'Event Branding',
     url: 'https://www.behance.net/gallery/203884379/Music-with-Love-Concert-by-Nothando-2023',
@@ -279,13 +279,13 @@ export const behance: BehanceProject[] = [
     id: 205075921,
     slug: 'video-editing-reel',
     name: 'Video Editing & Motion Reel',
-    year: '2022–2024',
+    year: '2022-2024',
     category: 'Motion · Video',
     url: 'https://www.behance.net/gallery/205075921/Video-Editing-Projects-2022-2024',
     tags: ['Video Editing', 'Cinematography', 'Motion'],
     tools: ['Premiere Pro', 'After Effects', 'Photoshop'],
     blurb:
-      'A reel of video editing, cinematography and motion-graphics work across 2022–2024 — edited, colour-graded and scored in Premiere Pro & After Effects.',
+      'A reel of video editing, cinematography and motion-graphics work from 2022 to 2024, edited, colour-graded and scored in Premiere Pro and After Effects.',
     cover: 'bf8750205075921.Y3JvcCwxMzc5LDEwNzksMjY5LDA.jpg',
     images: [],
     videos: [
@@ -304,7 +304,7 @@ export const behance: BehanceProject[] = [
   {
     id: 203884783,
     slug: 'impact-zambia',
-    name: 'Impact Zambia — Mental Health',
+    name: 'Impact Zambia: Mental Health',
     year: '2023',
     category: 'Awareness Campaign',
     url: 'https://www.behance.net/gallery/203884783/Impact-Zambia-Mental-health-awareness-designs',
@@ -330,14 +330,14 @@ export const behance: BehanceProject[] = [
   {
     id: 203383877,
     slug: 'works-2020-2025',
-    name: 'Selected Works 2020–2025',
+    name: 'Selected Works 2020-2025',
     year: '2025',
     category: 'Showreel',
     url: 'https://www.behance.net/gallery/203383877/My-works-From-2020-2025',
     tags: ['Event Branding', 'Motion', 'Visual Arts'],
     tools: ['Photoshop', 'Premiere Pro', 'After Effects'],
     blurb:
-      'A compilation reel of event branding, flyer design, video editing, visual arts and motion graphics from 2020–2025.',
+      'A compilation reel of event branding, flyer design, video editing, visual arts and motion graphics from 2020 to 2025.',
     cover: '7eb717203383877.Y3JvcCwxOTk5LDE1NjQsMCw5MzA.png',
     images: ['a6b366203383877.67b589ad0cacd.png', '32a0a4203383877.67b589ad0c27a.jpg'],
   },

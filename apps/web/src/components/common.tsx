@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from 'react'
 
 /* ------------------------------------------------------------------ */
-/* Reveal — fades/raises children into view on scroll                  */
+/* Reveal - fades/raises children into view on scroll                  */
 /* ------------------------------------------------------------------ */
 export function Reveal({
   children,
@@ -43,7 +43,7 @@ export function Reveal({
 }
 
 /* ------------------------------------------------------------------ */
-/* SmartImg — tries a chain of sources, then a graceful placeholder     */
+/* SmartImg - tries a chain of sources, then a graceful placeholder     */
 /* ------------------------------------------------------------------ */
 export function SmartImg({
   src,
@@ -92,7 +92,7 @@ export function SmartImg({
 }
 
 /* ------------------------------------------------------------------ */
-/* VideoPlayer — lazy, click-to-load embed (YouTube / Facebook)         */
+/* VideoPlayer - lazy, click-to-load embed (YouTube / Facebook)         */
 /* ------------------------------------------------------------------ */
 import { videoEmbedSrc, videoWatchUrl, type VideoEmbed } from '../lib/assets'
 
@@ -149,7 +149,7 @@ export function VideoPlayer({ video, label }: { video: VideoEmbed; label?: strin
 export { videoWatchUrl }
 
 /* ------------------------------------------------------------------ */
-/* AsciiBackground — the faint regenerating "matrix" texture            */
+/* AsciiBackground - the faint regenerating "matrix" texture            */
 /* ------------------------------------------------------------------ */
 export function AsciiBackground() {
   const ref = useRef<HTMLDivElement>(null)
@@ -193,7 +193,7 @@ export function AsciiBackground() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Marquee — scrolling skills strip                                     */
+/* Marquee - scrolling skills strip                                     */
 /* ------------------------------------------------------------------ */
 export function Marquee({ items }: { items: string[] }) {
   const row = (
@@ -227,7 +227,7 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* FloatingNav — scroll-progress ring + back-to-top (echoes deck nav)   */
+/* FloatingNav - scroll-progress ring + back-to-top (echoes deck nav)   */
 /* ------------------------------------------------------------------ */
 export function FloatingNav() {
   const [offset, setOffset] = useState(100)
