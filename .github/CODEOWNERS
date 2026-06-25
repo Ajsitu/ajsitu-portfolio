@@ -9,22 +9,21 @@
 # =============================================================================
 
 # Default owners for everything in the repo
-# TODO: Replace with your team/usernames
-* @hytel-io/core-team
+* @Ajsitu
 
-# CI/CD and deployment configurations - require senior review
-.github/ @hytel-io/devops
-scripts/ @hytel-io/devops
+# CI/CD and deployment configurations
+.github/ @Ajsitu
+scripts/ @Ajsitu
 
-# Shared packages - affect all apps, require careful review
-packages/ @hytel-io/core-team
+# Shared packages
+packages/ @Ajsitu
 
 # Frontend app
-apps/web/ @hytel-io/frontend
+apps/web/ @Ajsitu
 
 # Backend functions
-apps/functions/ @hytel-io/backend
+apps/functions/ @Ajsitu
 
 # Documentation
-*.md @hytel-io/core-team
-docs/ @hytel-io/core-team
+*.md @Ajsitu
+docs/ @Ajsitu

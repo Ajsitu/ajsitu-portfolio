@@ -1,4 +1,4 @@
-# Contributing to The Hytel Way
+# Contributing to ajsitu-portfolio
 
 Thank you for your interest in contributing to this project! This guide will help you get started.
 
@@ -16,7 +16,7 @@ Thank you for your interest in contributing to this project! This guide will hel
 
    ```bash
    git clone <your-repo-url>
-   cd hytel-react-boilerplate
+   cd ajsitu-portfolio
    ```
 
 2. **Install dependencies**
