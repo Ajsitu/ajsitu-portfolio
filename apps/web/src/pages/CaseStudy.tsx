@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { featured, behance } from '../data/projects'
 import { profile } from '../data/profile'
 import { Reveal, Eyebrow, SmartImg, VideoPlayer } from '../components/common'
+import { IconCirclePlus } from '../components/icons'
 import { BrowserMock } from './Home'
 import { coverUrl, coverRemote, moduleUrl, moduleRemote } from '../lib/assets'
 
@@ -9,14 +10,19 @@ const STEPS = ['Discover', 'Define', 'Develop', 'Deliver']
 
 function StepRow() {
   return (
-    <div className="mt-7 flex flex-wrap gap-2.5">
-      {STEPS.map((s) => (
-        <b
-          key={s}
-          className="rounded-full border border-brand bg-brand px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-char"
-        >
-          {s}
-        </b>
+    <div className="mt-8 flex max-w-xl flex-wrap gap-x-10 gap-y-4">
+      {STEPS.map((s, i) => (
+        <div key={s} className="flex min-w-[88px] flex-1 flex-col gap-2.5">
+          <span
+            className={`flex items-center gap-2 text-sm tracking-tight ${
+              i === 0 ? 'text-vanilla' : 'text-vanilla'
+            }`}
+          >
+            {i === 0 && <span className="h-1.5 w-1.5 rounded-full bg-brand" />}
+            {s}
+          </span>
+          <span className={`h-px w-full ${i === 0 ? 'bg-brand' : 'bg-vanilla/15'}`} />
+        </div>
       ))}
     </div>
   )
@@ -31,7 +37,7 @@ export function CaseStudy() {
     return (
       <section className="flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center">
         <h1 className="font-pixel text-5xl text-brand">404</h1>
-        <p className="text-vanilla/55">That project could not be found.</p>
+        <p className="text-vanilla">That project could not be found.</p>
         <Link to="/#work" className="font-mono text-sm text-brand">
           ← Back to work
         </Link>
@@ -45,7 +51,7 @@ export function CaseStudy() {
       <article className="pt-32">
         <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-16">
           <Reveal>
-            <Link to="/#work" className="mb-10 inline-block font-mono text-sm text-vanilla/55 hover:text-brand">
+            <Link to="/#work" className="mb-10 inline-block font-mono text-sm text-vanilla hover:text-brand">
               ← All work
             </Link>
           </Reveal>
@@ -54,7 +60,7 @@ export function CaseStudy() {
               <Reveal>
                 <Eyebrow>{live.kind}</Eyebrow>
               </Reveal>
-              <Reveal as="h1" className="font-pixel text-[clamp(48px,8vw,96px)] leading-[0.9]">
+              <Reveal as="h1" variant="title" className="font-pixel text-[clamp(48px,8vw,96px)] leading-[0.9]">
                 {live.name}
               </Reveal>
               <Reveal>
@@ -63,19 +69,19 @@ export function CaseStudy() {
                 </a>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-vanilla/55">{live.blurb}</p>
+                <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-vanilla">{live.blurb}</p>
               </Reveal>
               <Reveal delay={0.16}>
                 <div className="mt-7 flex flex-col gap-3.5">
                   {live.features.map((f) => (
                     <div key={f} className="flex items-center gap-3.5 font-pixel text-[clamp(19px,2.4vw,26px)]">
-                      <span className="font-bold text-brand">⊕</span> {f}
+                      <IconCirclePlus className="h-6 w-6 shrink-0 text-brand" /> {f}
                     </div>
                   ))}
                 </div>
               </Reveal>
             </div>
-            <Reveal delay={0.08}>
+            <Reveal delay={0.08} variant="right">
               <BrowserMock
                 url={live.url}
                 live
@@ -96,7 +102,7 @@ export function CaseStudy() {
                   <div key={s.title} className="rounded-xl border border-vanilla/10 p-6">
                     <div className="font-mono text-[13px] text-brand">/ {s.n}</div>
                     <h4 className="my-2.5 font-pixel text-2xl">{s.title}</h4>
-                    <p className="text-sm leading-relaxed text-vanilla/55">{s.body}</p>
+                    <p className="text-sm leading-relaxed text-vanilla">{s.body}</p>
                   </div>
                 ))}
               </div>
@@ -127,7 +133,7 @@ export function CaseStudy() {
     <article className="pt-32">
       <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-16">
         <Reveal>
-          <Link to="/#more" className="mb-10 inline-block font-mono text-sm text-vanilla/55 hover:text-brand">
+          <Link to="/#more" className="mb-10 inline-block font-mono text-sm text-vanilla hover:text-brand">
             ← All work
           </Link>
         </Reveal>
@@ -137,11 +143,11 @@ export function CaseStudy() {
             {p.category} · {p.year}
           </Eyebrow>
         </Reveal>
-        <Reveal as="h1" className="max-w-[15ch] font-pixel text-[clamp(40px,7vw,90px)] leading-[0.92]">
+        <Reveal as="h1" variant="title" className="max-w-[15ch] font-pixel text-[clamp(40px,7vw,90px)] leading-[0.92]">
           {p.name}
         </Reveal>
         <Reveal delay={0.08}>
-          <p className="mt-6 max-w-[640px] text-lg leading-relaxed text-vanilla/55">{p.blurb}</p>
+          <p className="mt-6 max-w-[640px] text-lg leading-relaxed text-vanilla">{p.blurb}</p>
         </Reveal>
 
         <Reveal delay={0.12}>
@@ -174,7 +180,7 @@ export function CaseStudy() {
         </Reveal>
 
         {/* Hero cover (full-res) */}
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} variant="right">
           <div className="mt-12 overflow-hidden rounded-2xl border border-vanilla/10">
             <SmartImg
               src={coverUrl(p.id, p.cover, 'original')}
@@ -226,7 +232,7 @@ export function CaseStudy() {
           >
             View on Behance <span>↗</span>
           </a>
-          <Link to={`/work/${next.slug}`} className="font-mono text-sm text-vanilla/55 hover:text-brand">
+          <Link to={`/work/${next.slug}`} className="font-mono text-sm text-vanilla hover:text-brand">
             Next project: {next.name} →
           </Link>
         </div>

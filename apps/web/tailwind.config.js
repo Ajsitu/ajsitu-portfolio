@@ -15,6 +15,7 @@ export default {
         'char-deep': '#101010',
         'char-soft': '#1f1f1f',
         vanilla: '#fffaee',
+        paragraph: '#98958f', // muted body-copy color from the deck
         brand: { DEFAULT: '#fe5102', dim: '#c8400a' },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -30,20 +31,25 @@ export default {
         card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
       },
       fontFamily: {
-        pixel: ['"Pixelify Sans"', 'monospace'],
-        grotesk: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        // Pixel display (real OffBit, as used in the Figma deck)
+        pixel: ['"OffBit 101"', '"OffBit"', 'monospace'], // grid pixel — NAME, titles, keyword
+        'pixel-soft': ['"OffBit"', 'monospace'], // soft pixel — "Let's talk about"
+        // Inter stands in for the deck's Neue Haas Grotesk across headings, body and labels
+        grotesk: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['Inter', 'system-ui', 'sans-serif'],
       },
       maxWidth: { site: '1320px' },
       keyframes: {
         blink: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0' } },
         marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-100%)' } },
         slidebar: { '0%': { transform: 'translateX(-100%)' }, '60%,100%': { transform: 'translateX(100%)' } },
+        rainbow: { '0%': { backgroundPosition: '0%' }, '100%': { backgroundPosition: '200%' } },
       },
       animation: {
         blink: 'blink 1s steps(1) infinite',
         marquee: 'marquee 26s linear infinite',
         slidebar: 'slidebar 2.4s ease-in-out infinite',
+        rainbow: 'rainbow 3s infinite linear',
       },
       borderRadius: {
         lg: 'var(--radius)',

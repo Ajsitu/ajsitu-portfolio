@@ -8,12 +8,15 @@ export function Reveal({
   delay = 0,
   as: Tag = 'div',
   className = '',
+  variant = 'up',
   style,
 }: {
   children: ReactNode
   delay?: number
   as?: keyof JSX.IntrinsicElements
   className?: string
+  /** 'up' = glide up · 'right' = slide in from right · 'title' = clean wipe-up (for display headings) */
+  variant?: 'up' | 'right' | 'title'
   style?: CSSProperties
 }) {
   const ref = useRef<HTMLElement>(null)
@@ -35,8 +38,9 @@ export function Reveal({
     return () => io.disconnect()
   }, [])
   const Comp = Tag as any
+  const base = variant === 'right' ? 'reveal-right' : variant === 'title' ? 'reveal-title' : 'reveal'
   return (
-    <Comp ref={ref} className={`reveal ${className}`} style={{ transitionDelay: `${delay}s`, ...style }}>
+    <Comp ref={ref} className={`${base} ${className}`} style={{ transitionDelay: `${delay}s`, ...style }}>
       {children}
     </Comp>
   )
@@ -158,8 +162,9 @@ export function AsciiBackground() {
     if (!el) return
     const chars = '%&!|+.· /\\'
     const build = () => {
-      const cols = Math.ceil(window.innerWidth / 13) + 4
-      const rows = Math.ceil(window.innerHeight / 18) + 4
+      // overfill on every axis so the grid bleeds off all edges (overflow is clipped)
+      const cols = Math.ceil(window.innerWidth / 9) + 8
+      const rows = Math.ceil(window.innerHeight / 16) + 6
       let out = ''
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
@@ -187,7 +192,8 @@ export function AsciiBackground() {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 select-none overflow-hidden whitespace-pre font-mono text-[15px] leading-[1.15] tracking-[2px] text-vanilla/[0.05]"
+      className="pointer-events-none fixed inset-0 z-0 select-none overflow-hidden whitespace-pre text-[15px] leading-[1.15] tracking-[2px] text-vanilla/[0.05]"
+      style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' }}
     />
   )
 }
@@ -220,7 +226,7 @@ export function Marquee({ items }: { items: string[] }) {
 /* ------------------------------------------------------------------ */
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="mb-6 inline-flex items-center gap-2.5 font-mono text-[13px] uppercase tracking-[0.22em] text-vanilla/55 before:h-px before:w-7 before:bg-brand before:content-['']">
+    <div className="mb-6 inline-flex items-center gap-2.5 font-mono text-[13px] uppercase tracking-[0.22em] text-vanilla before:h-px before:w-7 before:bg-brand before:content-['']">
       {children}
     </div>
   )

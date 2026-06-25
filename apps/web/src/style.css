@@ -1,8 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Inter = closest free substitute for the deck's Neue Haas Grotesk (headings + body + labels) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ----------------------------------------------------------------------------
+   OffBit — the deck's pixel/display typeface (free, Power Type foundry).
+   Two families, exactly as used in Figma:
+     'OffBit'      -> OffBit Regular / Bold   (the soft pixel — "Let's talk about")
+     'OffBit 101'  -> OffBit 101 / 101 Bold   (the grid pixel — NAME, titles, keyword)
+   ---------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'OffBit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('OffBit'), url('https://fonts.cdnfonts.com/s/109666/OffBit-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'OffBit';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('OffBit Bold'), url('https://fonts.cdnfonts.com/s/109666/OffBit-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'OffBit 101';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('OffBit 101'), url('https://fonts.cdnfonts.com/s/109666/OffBit-101.woff') format('woff');
+}
+@font-face {
+  font-family: 'OffBit 101';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('OffBit 101 Bold'), url('https://fonts.cdnfonts.com/s/109666/OffBit-101Bold.woff') format('woff');
+}
 
 /* =============================================================================
    shadcn token defaults (kept so @repo/ui components still render correctly)
@@ -58,19 +94,50 @@
 }
 
 /* =============================================================================
-   Reveal-on-scroll utility
+   Reveal-on-scroll utility — tuned to the deck's smart-animate feel:
+   a gentle ease-out glide (move + settle) rather than a hard slide.
    ============================================================================= */
 @layer components {
   .reveal {
     opacity: 0;
-    transform: translateY(38px);
+    transform: translateY(26px) scale(0.992);
     transition:
-      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
   }
   .reveal.in {
     opacity: 1;
     transform: none;
+  }
+  /* directional variants — echo content sliding into place in the prototype */
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(48px);
+    transition:
+      opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-right.in {
+    opacity: 1;
+    transform: none;
+  }
+  /* pixel headings: a clean wipe-up reveal */
+  .reveal-title {
+    opacity: 0;
+    transform: translateY(0.12em);
+    clip-path: inset(0 0 110% 0);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      clip-path 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: clip-path, transform, opacity;
+  }
+  .reveal-title.in {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 -25% 0);
   }
 }
 
@@ -81,8 +148,11 @@
     animation: none !important;
     transition: none !important;
   }
-  .reveal {
+  .reveal,
+  .reveal-right,
+  .reveal-title {
     opacity: 1;
     transform: none;
+    clip-path: none;
   }
 }

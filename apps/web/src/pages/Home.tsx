@@ -2,8 +2,35 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { profile } from '../data/profile'
 import { featured, behance } from '../data/projects'
-import { Reveal, Eyebrow, Marquee } from '../components/common'
+import { Reveal, Eyebrow, Marquee, SmartImg } from '../components/common'
 import { ProjectCard } from '../components/ProjectCard'
+import { StarOnGitHub } from '../components/StarOnGitHub'
+import { ProgrammingLottie } from '../components/ProgrammingLottie'
+import { UiuxLottie } from '../components/UiuxLottie'
+import { VideoEditingLottie } from '../components/VideoEditingLottie'
+import { GraphicDesignLottie } from '../components/GraphicDesignLottie'
+import { AiTrainerLottie } from '../components/AiTrainerLottie'
+import {
+  IconGitHub,
+  IconBehance,
+  IconLinkedIn,
+  IconMail,
+  IconGlobe,
+  IconPhone,
+  IconCirclePlus,
+  IconArrowUpRight,
+} from '../components/icons'
+
+/** Brand icon for a social/contact label. */
+function LinkIcon({ label, className }: { label: string; className?: string }) {
+  const l = label.toLowerCase()
+  if (l.includes('github')) return <IconGitHub className={className} />
+  if (l.includes('behance')) return <IconBehance className={className} />
+  if (l.includes('linkedin')) return <IconLinkedIn className={className} />
+  if (l.includes('email') || l.includes('mail')) return <IconMail className={className} />
+  if (l.includes('phone')) return <IconPhone className={className} />
+  return <IconGlobe className={className} />
+}
 
 /* ---------------- Hero ---------------- */
 function Hero() {
@@ -38,11 +65,11 @@ function Hero() {
         <h1 className="font-pixel font-bold uppercase leading-[0.82] tracking-wider text-brand text-[clamp(72px,19vw,300px)]">
           {profile.short}
         </h1>
-        <div className="mt-7 flex flex-wrap items-center gap-3 font-pixel text-[clamp(22px,4.5vw,52px)]">
-          Let’s talk about <span className="text-brand">{text}</span>
+        <div className="mt-7 flex flex-wrap items-center gap-3 font-pixel-soft text-[clamp(22px,4.5vw,52px)]">
+          Let’s talk about <span className="font-pixel text-brand">{text}</span>
           <span className="inline-block h-[1em] w-[0.55ch] translate-y-[0.12em] animate-blink bg-brand" />
         </div>
-        <div className="mt-12 flex flex-wrap gap-x-9 gap-y-3.5 font-mono text-[13px] tracking-[0.04em] text-vanilla/55">
+        <div className="mt-12 flex flex-wrap gap-x-9 gap-y-3.5 font-mono text-[13px] tracking-[0.04em] text-vanilla">
           <span className="flex items-center gap-2.5">
             <i className="h-[7px] w-[7px] rounded-full bg-brand shadow-[0_0_12px_#fe5102]" />
             Available for freelance &amp; full-time
@@ -65,62 +92,23 @@ function Hero() {
 function ServiceVisual({ title, icon, index }: { title: string; icon: string; index: number }) {
   const renderMark = () => {
     if (title === 'Front-End') {
-      return (
-        <div className="relative z-10 w-[72%] rounded-md border border-brand/55 bg-char-deep/80 p-3 shadow-[0_18px_40px_-22px_rgba(254,81,2,0.8)]">
-          <div className="mb-3 flex gap-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            <span className="h-1.5 w-1.5 rounded-full bg-vanilla/30" />
-            <span className="h-1.5 w-1.5 rounded-full bg-vanilla/20" />
-          </div>
-          <div className="space-y-2">
-            <span className="block h-1.5 w-4/5 rounded-full bg-vanilla/25" />
-            <span className="block h-1.5 w-2/3 rounded-full bg-brand" />
-            <span className="block h-1.5 w-5/6 rounded-full bg-vanilla/15" />
-          </div>
-          <span className="absolute -bottom-4 -right-4 font-pixel text-3xl text-brand">{icon}</span>
-        </div>
-      )
+      return <ProgrammingLottie />
     }
 
     if (title === 'UI / UX') {
-      return (
-        <div className="relative z-10 h-[74%] w-[72%] rounded-lg border border-brand/55 bg-vanilla/[0.04] p-3">
-          <span className="absolute left-4 top-4 h-7 w-7 rounded-full border-2 border-brand bg-char-deep" />
-          <span className="absolute right-5 top-7 h-9 w-16 rounded-md border border-vanilla/25 bg-char-deep/80" />
-          <span className="absolute bottom-7 left-5 h-12 w-20 rounded-md border border-brand/45 bg-brand/15" />
-          <span className="absolute bottom-5 right-6 h-6 w-6 rotate-45 border border-vanilla/30" />
-          <span className="absolute left-[37%] top-[38%] h-2.5 w-2.5 rounded-full bg-brand shadow-[0_0_0_6px_rgba(254,81,2,0.14)]" />
-        </div>
-      )
+      return <UiuxLottie />
     }
 
     if (title === 'Graphic Design') {
-      return (
-        <div className="relative z-10 h-[76%] w-[72%]">
-          <span className="absolute left-1 top-4 h-20 w-20 rounded-full bg-brand" />
-          <span className="absolute right-0 top-7 h-16 w-16 rounded-md border border-vanilla/25 bg-[#2d57ff]/80" />
-          <span className="absolute bottom-3 left-8 h-14 w-28 -rotate-6 rounded-md bg-vanilla text-char shadow-[0_18px_40px_-24px_rgba(255,250,238,0.8)]" />
-          <span className="absolute bottom-7 left-14 h-1.5 w-16 rounded-full bg-char" />
-          <span className="absolute bottom-12 left-14 h-1.5 w-10 rounded-full bg-brand" />
-        </div>
-      )
+      return <GraphicDesignLottie />
     }
 
     if (title === 'Video Editing') {
-      return (
-        <div className="relative z-10 h-[74%] w-[74%] rounded-md border border-brand/55 bg-char-deep/80 p-3">
-          <div className="grid h-full grid-rows-[1fr_auto] gap-3">
-            <div className="relative overflow-hidden rounded bg-vanilla/[0.06]">
-              <span className="absolute left-1/2 top-1/2 h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-y-[15px] border-l-[24px] border-y-transparent border-l-brand" />
-            </div>
-            <div className="grid grid-cols-5 gap-1.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className={`h-5 rounded-sm ${i === 2 ? 'bg-brand' : 'bg-vanilla/18'}`} />
-              ))}
-            </div>
-          </div>
-        </div>
-      )
+      return <VideoEditingLottie />
+    }
+
+    if (title === 'Trainer') {
+      return <AiTrainerLottie />
     }
 
     return (
@@ -164,26 +152,63 @@ function About() {
         <Reveal>
           <Eyebrow>About / Persona</Eyebrow>
         </Reveal>
-        <Reveal as="h2" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
           Born to <span className="text-brand">Build</span>
         </Reveal>
         <Reveal delay={0.08}>
-          <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla/55">
+          <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla">
             {profile.intro}
           </p>
         </Reveal>
         <div className="mt-16 grid grid-cols-2 gap-[18px] md:grid-cols-3 lg:grid-cols-5">
-          {profile.services.map((s, i) => (
-            <Reveal key={s.title} delay={0.08 * (i + 1)}>
-              <div className="group flex h-full flex-col overflow-hidden rounded-lg border border-vanilla/10 bg-char-soft transition duration-300 hover:-translate-y-2 hover:border-brand hover:shadow-[0_24px_70px_-42px_rgba(254,81,2,0.75)]">
+          {profile.services.map((s, i) => {
+            const route = s.title === 'Video Editing' ? '/work/video-editing-reel' : null
+            const anchor =
+              s.title === 'Graphic Design'
+                ? 'more'
+                : s.title === 'Front-End' || s.title === 'UI / UX'
+                  ? 'work'
+                  : null
+            const clickable = Boolean(route || anchor)
+            const cardClass =
+              'group flex h-full w-full flex-col overflow-hidden rounded-lg border border-vanilla/10 bg-char-soft text-left transition duration-300 hover:-translate-y-2 hover:border-brand hover:shadow-[0_24px_70px_-42px_rgba(254,81,2,0.75)]'
+            const inner = (
+              <>
                 <ServiceVisual title={s.title} icon={s.icon} index={i} />
                 <div className="px-[18px] pb-6 pt-5">
-                  <h3 className="mb-2.5 font-pixel text-xl">{s.title}</h3>
-                  <p className="text-[13.5px] leading-snug text-vanilla/55">{s.body}</p>
+                  <h3 className="mb-2.5 flex items-center gap-1.5 font-pixel text-xl">
+                    {s.title}
+                    {clickable && (
+                      <IconArrowUpRight className="h-4 w-4 text-brand opacity-0 transition group-hover:opacity-100" />
+                    )}
+                  </h3>
+                  <p className="text-[13.5px] leading-snug text-vanilla">{s.body}</p>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </>
+            )
+            return (
+              <Reveal key={s.title} delay={0.08 * (i + 1)}>
+                {route ? (
+                  <Link to={route} className={cardClass} aria-label={`${s.title} - view case study`}>
+                    {inner}
+                  </Link>
+                ) : anchor ? (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                    className={cardClass}
+                    aria-label={`${s.title} - jump to Behance work`}
+                  >
+                    {inner}
+                  </button>
+                ) : (
+                  <div className={cardClass}>{inner}</div>
+                )}
+              </Reveal>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -200,19 +225,34 @@ function Timeline() {
         </Reveal>
         <div className="grid items-start gap-10 md:grid-cols-2 lg:gap-[90px]">
           <div>
-            <Reveal as="h2" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+            <Reveal delay={0.06} variant="right">
+              <div className="group relative mb-8 w-full max-w-[360px] overflow-hidden rounded-2xl border border-vanilla/10">
+                <SmartImg
+                  src="/portrait.jpg"
+                  fallbacks={['/portrait.jpg.jpg', '/portrait.jpeg', '/portrait.png', '/portrait.webp']}
+                  alt="Situmbeko Simataa"
+                  className="aspect-[4/5] w-full object-cover object-[38%_18%] grayscale contrast-[1.05] transition duration-700 ease-out group-hover:grayscale-0"
+                />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-char-deep/75 via-transparent to-transparent" />
+                <div className="pointer-events-none absolute bottom-4 left-5 right-5 flex items-end justify-between">
+                  <span className="font-mono text-xs tracking-[0.05em] text-vanilla/85">Lusaka, Zambia</span>
+                  <span className="font-pixel text-sm text-brand">/ at work</span>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
               Work
               <br />
               Timeline
             </Reveal>
             <Reveal delay={0.08}>
-              <p className="mt-6 max-w-[520px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla/55">
+              <p className="mt-6 max-w-[520px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla">
                 {profile.pitch}
               </p>
             </Reveal>
             <Reveal delay={0.16}>
               <div className="mt-10">
-                <div className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-vanilla/55">Main Links</div>
+                <div className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-vanilla">Main Links</div>
                 <div className="flex flex-wrap gap-3">
                   {[
                     { label: 'Website', href: profile.links.website },
@@ -226,9 +266,11 @@ function Timeline() {
                       href={l.href}
                       target="_blank"
                       rel="noopener"
-                      className="inline-flex items-center gap-2.5 rounded-full bg-vanilla px-[18px] py-2.5 text-sm font-semibold text-char transition hover:-translate-y-0.5 hover:bg-brand"
+                      className="inline-flex items-center gap-2 rounded-full bg-vanilla px-[18px] py-2.5 text-sm font-semibold text-char transition hover:-translate-y-0.5 hover:bg-brand"
                     >
-                      {l.label} <span className="font-mono">→</span>
+                      <LinkIcon label={l.label} className="h-4 w-4" />
+                      {l.label}
+                      <IconArrowUpRight className="h-3.5 w-3.5" />
                     </a>
                   ))}
                 </div>
@@ -257,7 +299,7 @@ function Timeline() {
                 >
                   <div className="font-mono text-xs tracking-[0.05em] text-brand">{t.when}</div>
                   <h4 className="mb-0.5 mt-1.5 text-[19px] font-semibold">{t.role}</h4>
-                  <div className="text-sm text-vanilla/55">{t.org}</div>
+                  <div className="text-sm text-vanilla">{t.org}</div>
                 </div>
               ))}
             </div>
@@ -276,7 +318,7 @@ function Process() {
         <Reveal>
           <Eyebrow>How I Work</Eyebrow>
         </Reveal>
-        <Reveal as="h2" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
           The <span className="text-brand">Double Diamond</span>
         </Reveal>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -285,7 +327,7 @@ function Process() {
               <div className="group relative h-full overflow-hidden rounded-xl border border-vanilla/10 p-7 transition duration-300 hover:border-brand hover:bg-char-soft">
                 <div className="font-mono text-[13px] tracking-[0.1em] text-brand">/ {s.n}</div>
                 <h4 className="my-3 font-pixel text-[26px]">{s.title}</h4>
-                <p className="text-sm leading-relaxed text-vanilla/55">{s.body}</p>
+                <p className="text-sm leading-relaxed text-vanilla">{s.body}</p>
                 <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-brand transition-all duration-500 group-hover:w-full" />
               </div>
             </Reveal>
@@ -304,11 +346,11 @@ function Featured() {
         <Reveal>
           <Eyebrow>Selected Work</Eyebrow>
         </Reveal>
-        <Reveal as="h2" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
           Featured <span className="text-brand">Projects</span>
         </Reveal>
         <Reveal delay={0.08}>
-          <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla/55">
+          <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla">
             Live products I’ve designed and built, from a career platform to a digital marketing dashboard.
             Some of my production work is under NDA;{' '}
             <a href="#contact" className="text-brand underline-offset-4 hover:underline">
@@ -334,7 +376,7 @@ function Featured() {
                     {p.badge}
                   </span>
                 </Reveal>
-                <Reveal as="h3" className="mb-2 font-pixel text-[clamp(40px,6vw,76px)] leading-[0.95]">
+                <Reveal as="h3" variant="title" className="mb-2 font-pixel text-[clamp(40px,6vw,76px)] leading-[0.95]">
                   {p.name}
                 </Reveal>
                 <Reveal>
@@ -343,13 +385,13 @@ function Featured() {
                   </a>
                 </Reveal>
                 <Reveal delay={0.08}>
-                  <p className="max-w-[520px] text-base leading-relaxed text-vanilla/55">{p.blurb}</p>
+                  <p className="max-w-[520px] text-base leading-relaxed text-vanilla">{p.blurb}</p>
                 </Reveal>
                 <Reveal delay={0.16}>
                   <div className="mt-7 flex flex-col gap-3.5">
                     {p.features.map((f) => (
                       <div key={f} className="flex items-center gap-3.5 font-pixel text-[clamp(19px,2.4vw,26px)]">
-                        <span className="font-bold text-brand">⊕</span> {f}
+                        <IconCirclePlus className="h-6 w-6 shrink-0 text-brand" /> {f}
                       </div>
                     ))}
                   </div>
@@ -406,7 +448,7 @@ export function BrowserMock({
         <i className="h-[11px] w-[11px] rounded-full bg-brand" />
         <i className="h-[11px] w-[11px] rounded-full bg-[#333]" />
         <i className="h-[11px] w-[11px] rounded-full bg-[#333]" />
-        <span className="ml-3.5 flex-1 truncate rounded-full bg-[#1a1a1a] px-3.5 py-1.5 font-mono text-xs text-vanilla/55">
+        <span className="ml-3.5 flex-1 truncate rounded-full bg-[#1a1a1a] px-3.5 py-1.5 font-mono text-xs text-vanilla">
           {domain}
         </span>
       </div>
@@ -537,11 +579,11 @@ function MoreWork() {
         <Reveal>
           <Eyebrow>From Behance</Eyebrow>
         </Reveal>
-        <Reveal as="h2" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
           More <span className="text-brand">Work</span>
         </Reveal>
         <Reveal delay={0.08}>
-          <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla/55">
+          <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla">
             Product, branding, event design, video and multimedia from my Behance portfolio.
           </p>
         </Reveal>
@@ -579,13 +621,18 @@ function Contact() {
   return (
     <section id="contact" className="pt-[clamp(90px,14vh,170px)]">
       <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-16">
-        <Reveal as="h2" className="font-grotesk text-[clamp(64px,16vw,220px)] font-bold leading-[0.85] tracking-tight text-brand">
+        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(64px,16vw,220px)] font-bold leading-[0.85] tracking-tight text-brand">
           Thank You
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mt-4 max-w-[18ch] font-pixel text-[clamp(22px,3.5vw,40px)] leading-tight">
             Let’s create something out of this world together.
           </p>
+        </Reveal>
+        <Reveal delay={0.12}>
+          <div className="mt-8">
+            <StarOnGitHub />
+          </div>
         </Reveal>
         <Reveal delay={0.16}>
           <div className="mt-14 border-t border-vanilla/10">
@@ -597,7 +644,10 @@ function Contact() {
                 rel="noopener"
                 className="group flex flex-wrap items-center justify-between gap-3.5 border-b border-vanilla/10 px-1 py-6 transition hover:bg-gradient-to-r hover:from-brand/[0.07] hover:to-transparent hover:pl-5"
               >
-                <span className="font-mono text-xs uppercase tracking-[0.18em] text-vanilla/55">{r.k}</span>
+                <span className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-vanilla">
+                  <LinkIcon label={r.k} className="h-4 w-4 text-vanilla/70 transition-colors group-hover:text-brand" />
+                  {r.k}
+                </span>
                 <span className="font-pixel text-[clamp(20px,3vw,32px)] group-hover:text-brand">{r.v}</span>
               </a>
             ))}

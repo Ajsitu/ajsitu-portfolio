@@ -3,7 +3,7 @@ export const profile = {
   short: 'SITU',
   role: 'UI/UX & Front-End Developer',
   tagline: 'UI designer, front-end developer and multimedia creative',
-  location: 'Helen Kaunda, Lusaka, Zambia',
+  location: 'Lusaka, Zambia',
   available: true,
   email: 'situmbekosimataa3@gmail.com',
   phones: ['+260 971 164 264', '+260 571 400 453'],
@@ -17,7 +17,7 @@ export const profile = {
     'I design interfaces in Figma, build them in React, and create the visual content around them. My work covers product screens, responsive front-end builds, brand graphics and video.',
   pitch:
     'I work across design and code, from first layout to live release. I have built for startups, agencies, local brands and remote teams in the USA.',
-  typedWords: ['design.', 'front-end.', 'video.', 'your idea.', 'UI systems.'],
+  typedWords: ['design.', 'front-end.', 'video.', 'your brand.', 'your idea.'],
   skills: ['React', 'TypeScript', 'Figma', 'Video Editing', 'Graphic Design', 'Training'],
   services: [
     {
