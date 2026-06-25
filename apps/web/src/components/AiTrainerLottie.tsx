@@ -161,7 +161,7 @@ export function AiTrainerLottie() {
           const vb = (svg.getAttribute('viewBox') || '0 0 0 0').split(/\s+/).map(Number)
           const area = vb[2] * vb[3]
           if (!area) return
-          svg.querySelectorAll('path').forEach((p) => {
+          svg.querySelectorAll('path').forEach(p => {
             let b: DOMRect
             try {
               b = (p as SVGGraphicsElement).getBBox()

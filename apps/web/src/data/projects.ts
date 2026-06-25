@@ -219,8 +219,7 @@ export const behance: BehanceProject[] = [
     url: 'https://www.behance.net/gallery/203884379/Music-with-Love-Concert-by-Nothando-2023',
     tags: ['Concert', 'Gospel', 'Event Branding'],
     tools: ['Photoshop'],
-    blurb:
-      'Event branding for Nothando’s “Music with Love” concert and fellowship programme.',
+    blurb: 'Event branding for Nothando’s “Music with Love” concert and fellowship programme.',
     cover: 'c6dd11203884379.Y3JvcCw5NjUsNzU0LDAsODM.jpg',
     images: [
       'f705c3203884379.67aeefa53e75e.jpg',
@@ -239,7 +238,8 @@ export const behance: BehanceProject[] = [
     url: 'https://www.behance.net/gallery/206396053/CHITENGE-FASHION-SHOW-2020',
     tags: ['Event Design', 'Ticket Design', 'Fashion'],
     tools: ['Photoshop', 'InDesign'],
-    blurb: 'Event identity and ticket design for the 2020 Chitenge Fashion Show (client: Pius Security).',
+    blurb:
+      'Event identity and ticket design for the 2020 Chitenge Fashion Show (client: Pius Security).',
     cover: 'ffeca7206396053.Y3JvcCwxNTM0LDEyMDAsNzMyLDA.jpg',
     images: [
       '9b5813206396053.67a0ccb0239b3.jpg',
@@ -257,8 +257,7 @@ export const behance: BehanceProject[] = [
     url: 'https://www.behance.net/gallery/206395099/Pius-Security-Company-Branding-2022',
     tags: ['Brand Identity', 'Logo', 'Poster'],
     tools: ['Photoshop', 'Illustrator'],
-    blurb:
-      'Logo and poster work for Pius Security Company in Mongu, Western Province, Zambia.',
+    blurb: 'Logo and poster work for Pius Security Company in Mongu, Western Province, Zambia.',
     cover: 'fc60f8206395099.Y3JvcCwxMjI2LDk1OSwyNyww.jpg',
     images: ['e4cd11206395099.66cc329852bf6.jpg'],
   },

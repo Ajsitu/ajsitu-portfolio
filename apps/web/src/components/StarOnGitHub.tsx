@@ -14,8 +14,8 @@ export function StarOnGitHub() {
   useEffect(() => {
     let alive = true
     fetch(`https://api.github.com/repos/${REPO}`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
+      .then(r => (r.ok ? r.json() : null))
+      .then(d => {
         if (alive && d && typeof d.stargazers_count === 'number') setStars(d.stargazers_count)
       })
       .catch(() => {})

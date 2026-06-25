@@ -136,7 +136,9 @@ function ServiceVisual({ title, icon, index }: { title: string; icon: string; in
         <span className="h-2 w-2 rounded-full bg-brand" />
         <span className="h-2 w-2 rounded-full bg-vanilla/25" />
       </div>
-      <span className="absolute right-3 top-3 font-mono text-[10px] text-vanilla/30">0{index + 1}</span>
+      <span className="absolute right-3 top-3 font-mono text-[10px] text-vanilla/30">
+        0{index + 1}
+      </span>
       <span className="absolute inset-x-0 bottom-0 h-px bg-brand/45" />
       <span className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-brand/15 blur-2xl" />
       {renderMark()}
@@ -152,7 +154,11 @@ function About() {
         <Reveal>
           <Eyebrow>About / Persona</Eyebrow>
         </Reveal>
-        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal
+          as="h2"
+          variant="title"
+          className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight"
+        >
           Born to <span className="text-brand">Build</span>
         </Reveal>
         <Reveal delay={0.08}>
@@ -189,7 +195,11 @@ function About() {
             return (
               <Reveal key={s.title} delay={0.08 * (i + 1)}>
                 {route ? (
-                  <Link to={route} className={cardClass} aria-label={`${s.title} - view case study`}>
+                  <Link
+                    to={route}
+                    className={cardClass}
+                    aria-label={`${s.title} - view case study`}
+                  >
                     {inner}
                   </Link>
                 ) : anchor ? (
@@ -229,18 +239,29 @@ function Timeline() {
               <div className="group relative mb-8 w-full max-w-[360px] overflow-hidden rounded-2xl border border-vanilla/10">
                 <SmartImg
                   src="/portrait.jpg"
-                  fallbacks={['/portrait.jpg.jpg', '/portrait.jpeg', '/portrait.png', '/portrait.webp']}
+                  fallbacks={[
+                    '/portrait.jpg.jpg',
+                    '/portrait.jpeg',
+                    '/portrait.png',
+                    '/portrait.webp',
+                  ]}
                   alt="Situmbeko Simataa"
                   className="aspect-[4/5] w-full object-cover object-[38%_18%] grayscale contrast-[1.05] transition duration-700 ease-out group-hover:grayscale-0"
                 />
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-char-deep/75 via-transparent to-transparent" />
                 <div className="pointer-events-none absolute bottom-4 left-5 right-5 flex items-end justify-between">
-                  <span className="font-mono text-xs tracking-[0.05em] text-vanilla/85">Lusaka, Zambia</span>
+                  <span className="font-mono text-xs tracking-[0.05em] text-vanilla/85">
+                    Lusaka, Zambia
+                  </span>
                   <span className="font-pixel text-sm text-brand">/ at work</span>
                 </div>
               </div>
             </Reveal>
-            <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+            <Reveal
+              as="h2"
+              variant="title"
+              className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight"
+            >
               Work
               <br />
               Timeline
@@ -252,7 +273,9 @@ function Timeline() {
             </Reveal>
             <Reveal delay={0.16}>
               <div className="mt-10">
-                <div className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-vanilla">Main Links</div>
+                <div className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-vanilla">
+                  Main Links
+                </div>
                 <div className="flex flex-wrap gap-3">
                   {[
                     { label: 'Website', href: profile.links.website },
@@ -260,7 +283,7 @@ function Timeline() {
                     { label: 'Behance', href: profile.links.behance },
                     { label: 'LinkedIn', href: profile.links.linkedin },
                     { label: 'Email', href: `mailto:${profile.email}` },
-                  ].map((l) => (
+                  ].map(l => (
                     <a
                       key={l.label}
                       href={l.href}
@@ -292,7 +315,7 @@ function Timeline() {
           </div>
           <Reveal delay={0.16}>
             <div className="relative pl-7 before:absolute before:bottom-1.5 before:left-[5px] before:top-1.5 before:w-px before:bg-vanilla/10 before:content-['']">
-              {profile.timeline.map((t) => (
+              {profile.timeline.map(t => (
                 <div
                   key={t.role + t.when}
                   className="relative pb-9 last:pb-0 before:absolute before:-left-[27px] before:top-1.5 before:h-[11px] before:w-[11px] before:rounded-full before:border-2 before:border-brand before:bg-char before:content-['']"
@@ -318,7 +341,11 @@ function Process() {
         <Reveal>
           <Eyebrow>How I Work</Eyebrow>
         </Reveal>
-        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal
+          as="h2"
+          variant="title"
+          className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight"
+        >
           The <span className="text-brand">Double Diamond</span>
         </Reveal>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -346,13 +373,17 @@ function Featured() {
         <Reveal>
           <Eyebrow>Selected Work</Eyebrow>
         </Reveal>
-        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal
+          as="h2"
+          variant="title"
+          className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight"
+        >
           Featured <span className="text-brand">Projects</span>
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mt-6 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed text-vanilla">
-            Live products I’ve designed and built, from a career platform to a digital marketing dashboard.
-            Some of my production work is under NDA;{' '}
+            Live products I’ve designed and built, from a career platform to a digital marketing
+            dashboard. Some of my production work is under NDA;{' '}
             <a href="#contact" className="text-brand underline-offset-4 hover:underline">
               more examples available on request
             </a>
@@ -362,7 +393,10 @@ function Featured() {
       </div>
 
       {featured.map((p, idx) => (
-        <div key={p.slug} className="border-t border-vanilla/10 py-[clamp(50px,8vh,90px)] first:mt-12">
+        <div
+          key={p.slug}
+          className="border-t border-vanilla/10 py-[clamp(50px,8vh,90px)] first:mt-12"
+        >
           <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-16">
             <div className="grid items-center gap-10 md:grid-cols-2 lg:gap-[70px]">
               <div className={idx % 2 ? 'md:order-2' : ''}>
@@ -376,11 +410,20 @@ function Featured() {
                     {p.badge}
                   </span>
                 </Reveal>
-                <Reveal as="h3" variant="title" className="mb-2 font-pixel text-[clamp(40px,6vw,76px)] leading-[0.95]">
+                <Reveal
+                  as="h3"
+                  variant="title"
+                  className="mb-2 font-pixel text-[clamp(40px,6vw,76px)] leading-[0.95]"
+                >
                   {p.name}
                 </Reveal>
                 <Reveal>
-                  <a href={p.url} target="_blank" rel="noopener" className="mb-5 inline-block font-mono text-sm text-brand">
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="mb-5 inline-block font-mono text-sm text-brand"
+                  >
                     {p.domain} ↗
                   </a>
                 </Reveal>
@@ -389,8 +432,11 @@ function Featured() {
                 </Reveal>
                 <Reveal delay={0.16}>
                   <div className="mt-7 flex flex-col gap-3.5">
-                    {p.features.map((f) => (
-                      <div key={f} className="flex items-center gap-3.5 font-pixel text-[clamp(19px,2.4vw,26px)]">
+                    {p.features.map(f => (
+                      <div
+                        key={f}
+                        className="flex items-center gap-3.5 font-pixel text-[clamp(19px,2.4vw,26px)]"
+                      >
                         <IconCirclePlus className="h-6 w-6 shrink-0 text-brand" /> {f}
                       </div>
                     ))}
@@ -462,7 +508,9 @@ export function BrowserMock({
           <h5 className="relative z-10 font-pixel text-[clamp(28px,4vw,46px)] uppercase leading-none text-white">
             {name}
           </h5>
-          <p className="relative z-10 mt-3.5 max-w-[300px] font-mono text-[13px] text-white/75">{blurb}</p>
+          <p className="relative z-10 mt-3.5 max-w-[300px] font-mono text-[13px] text-white/75">
+            {blurb}
+          </p>
           <span className="relative z-10 mt-5 rounded-full border border-white/40 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-white">
             {badge}
           </span>
@@ -504,8 +552,8 @@ function LivePreview({
     ro.observe(el)
     setScale(el.clientWidth / VW)
     const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
+      entries => {
+        entries.forEach(e => {
           if (e.isIntersecting) {
             setShow(true)
             io.disconnect()
@@ -533,7 +581,9 @@ function LivePreview({
           loaded ? 'opacity-0' : 'opacity-100'
         }`}
       >
-        <h5 className="font-pixel text-[clamp(28px,4vw,46px)] uppercase leading-none text-white">{name}</h5>
+        <h5 className="font-pixel text-[clamp(28px,4vw,46px)] uppercase leading-none text-white">
+          {name}
+        </h5>
         <span className="mt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-white/70">
           loading live preview…
         </span>
@@ -579,7 +629,11 @@ function MoreWork() {
         <Reveal>
           <Eyebrow>From Behance</Eyebrow>
         </Reveal>
-        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight">
+        <Reveal
+          as="h2"
+          variant="title"
+          className="font-grotesk text-[clamp(40px,8vw,104px)] font-bold leading-[0.95] tracking-tight"
+        >
           More <span className="text-brand">Work</span>
         </Reveal>
         <Reveal delay={0.08}>
@@ -621,7 +675,11 @@ function Contact() {
   return (
     <section id="contact" className="pt-[clamp(90px,14vh,170px)]">
       <div className="mx-auto w-full max-w-site px-5 sm:px-8 lg:px-16">
-        <Reveal as="h2" variant="title" className="font-grotesk text-[clamp(64px,16vw,220px)] font-bold leading-[0.85] tracking-tight text-brand">
+        <Reveal
+          as="h2"
+          variant="title"
+          className="font-grotesk text-[clamp(64px,16vw,220px)] font-bold leading-[0.85] tracking-tight text-brand"
+        >
           Thank You
         </Reveal>
         <Reveal delay={0.08}>
@@ -636,7 +694,7 @@ function Contact() {
         </Reveal>
         <Reveal delay={0.16}>
           <div className="mt-14 border-t border-vanilla/10">
-            {rows.map((r) => (
+            {rows.map(r => (
               <a
                 key={r.k}
                 href={r.href}
@@ -645,10 +703,15 @@ function Contact() {
                 className="group flex flex-wrap items-center justify-between gap-3.5 border-b border-vanilla/10 px-1 py-6 transition hover:bg-gradient-to-r hover:from-brand/[0.07] hover:to-transparent hover:pl-5"
               >
                 <span className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-vanilla">
-                  <LinkIcon label={r.k} className="h-4 w-4 text-vanilla/70 transition-colors group-hover:text-brand" />
+                  <LinkIcon
+                    label={r.k}
+                    className="h-4 w-4 text-vanilla/70 transition-colors group-hover:text-brand"
+                  />
                   {r.k}
                 </span>
-                <span className="font-pixel text-[clamp(20px,3vw,32px)] group-hover:text-brand">{r.v}</span>
+                <span className="font-pixel text-[clamp(20px,3vw,32px)] group-hover:text-brand">
+                  {r.v}
+                </span>
               </a>
             ))}
           </div>

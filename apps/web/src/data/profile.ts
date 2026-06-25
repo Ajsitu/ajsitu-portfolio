@@ -74,7 +74,11 @@ export const profile = {
       role: 'Software Engineering Intern',
       org: 'Zambian Cloud Programmers',
     },
-    { when: '2020 - Present · Remote', role: 'Founder & Lead Designer', org: "Allen's Innovations" },
+    {
+      when: '2020 - Present · Remote',
+      role: 'Founder & Lead Designer',
+      org: "Allen's Innovations",
+    },
     {
       when: '2020 - 2024 · Lusaka',
       role: 'BSc ICT (Software Engineering)',

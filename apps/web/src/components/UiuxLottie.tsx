@@ -92,7 +92,12 @@ export function UiuxLottie() {
     let alive = true
     let anim: any
     const fetchData = async () => {
-      for (const url of ['/lottie/uiux.json', '/lottie/UIUX.json', '/lottie/UIUX.json.json', '/lottie/uiux.json.json']) {
+      for (const url of [
+        '/lottie/uiux.json',
+        '/lottie/UIUX.json',
+        '/lottie/UIUX.json.json',
+        '/lottie/uiux.json.json',
+      ]) {
         try {
           const r = await fetch(url)
           if (!r.ok) continue
@@ -122,7 +127,7 @@ export function UiuxLottie() {
           const vb = (svg.getAttribute('viewBox') || '0 0 0 0').split(/\s+/).map(Number)
           const area = vb[2] * vb[3]
           if (!area) return
-          svg.querySelectorAll('path').forEach((p) => {
+          svg.querySelectorAll('path').forEach(p => {
             let b: DOMRect
             try {
               b = (p as SVGGraphicsElement).getBBox()

@@ -1,4 +1,12 @@
-import { useEffect, useRef, useState, type ReactNode, type CSSProperties, type FC, type Ref } from 'react'
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type CSSProperties,
+  type FC,
+  type Ref,
+} from 'react'
 
 /* ------------------------------------------------------------------ */
 /* Reveal - fades/raises children into view on scroll                  */
@@ -24,8 +32,8 @@ export function Reveal({
     const el = ref.current
     if (!el) return
     const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
+      entries => {
+        entries.forEach(e => {
           if (e.isIntersecting) {
             el.classList.add('in')
             io.unobserve(el)
@@ -37,10 +45,20 @@ export function Reveal({
     io.observe(el)
     return () => io.disconnect()
   }, [])
-  const Comp = Tag as unknown as FC<{ className?: string; style?: CSSProperties; children?: ReactNode; ref?: Ref<HTMLElement> }>
-  const base = variant === 'right' ? 'reveal-right' : variant === 'title' ? 'reveal-title' : 'reveal'
+  const Comp = Tag as unknown as FC<{
+    className?: string
+    style?: CSSProperties
+    children?: ReactNode
+    ref?: Ref<HTMLElement>
+  }>
+  const base =
+    variant === 'right' ? 'reveal-right' : variant === 'title' ? 'reveal-title' : 'reveal'
   return (
-    <Comp ref={ref} className={`${base} ${className}`} style={{ transitionDelay: `${delay}s`, ...style }}>
+    <Comp
+      ref={ref}
+      className={`${base} ${className}`}
+      style={{ transitionDelay: `${delay}s`, ...style }}
+    >
       {children}
     </Comp>
   )
@@ -82,7 +100,7 @@ export function SmartImg({
       alt={alt}
       loading="lazy"
       className={className}
-      onError={(e) => {
+      onError={e => {
         const img = e.currentTarget
         if (idx.current < chain.length) {
           img.src = chain[idx.current]
@@ -103,9 +121,7 @@ import { videoEmbedSrc, videoWatchUrl, type VideoEmbed } from '../lib/assets'
 export function VideoPlayer({ video, label }: { video: VideoEmbed; label?: string }) {
   const [play, setPlay] = useState(false)
   const thumb =
-    video.provider === 'youtube'
-      ? `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`
-      : undefined
+    video.provider === 'youtube' ? `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg` : undefined
   return (
     <div
       className={`relative overflow-hidden rounded-xl border border-vanilla/10 bg-black ${
@@ -142,7 +158,9 @@ export function VideoPlayer({ video, label }: { video: VideoEmbed; label?: strin
             </svg>
           </span>
           {label && (
-            <span className="absolute bottom-3 left-3 z-10 font-mono text-xs text-vanilla/80">{label}</span>
+            <span className="absolute bottom-3 left-3 z-10 font-mono text-xs text-vanilla/80">
+              {label}
+            </span>
           )}
         </button>
       )}
@@ -212,7 +230,10 @@ export function Marquee({ items }: { items: string[] }) {
     </span>
   )
   return (
-    <div className="flex overflow-hidden whitespace-nowrap border-y border-vanilla/10 py-5" aria-hidden>
+    <div
+      className="flex overflow-hidden whitespace-nowrap border-y border-vanilla/10 py-5"
+      aria-hidden
+    >
       <div className="flex shrink-0 animate-marquee">
         {row}
         {row}
@@ -265,7 +286,13 @@ export function FloatingNav() {
           strokeWidth={2}
         />
       </svg>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        className="h-5 w-5"
+      >
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </button>

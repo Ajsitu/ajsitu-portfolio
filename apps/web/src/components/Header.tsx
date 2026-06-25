@@ -50,19 +50,25 @@ export function Header() {
             : 'border-transparent py-5'
         }`}
       >
-        <Link to="/" className="font-pixel font-bold text-xl tracking-wide" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="font-pixel font-bold text-xl tracking-wide"
+          onClick={() => setOpen(false)}
+        >
           {profile.short}
           <span className="text-brand">.</span>
         </Link>
         <button
           aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((o) => !o)}
+          onClick={() => setOpen(o => !o)}
           className="flex h-[46px] w-[46px] flex-col items-center justify-center gap-[5px] rounded-full border border-vanilla/10 transition hover:border-brand"
         >
           <span
             className={`h-0.5 w-[18px] bg-vanilla transition-transform ${open ? 'translate-y-[7px] rotate-45' : ''}`}
           />
-          <span className={`h-0.5 w-[18px] bg-vanilla transition-opacity ${open ? 'opacity-0' : ''}`} />
+          <span
+            className={`h-0.5 w-[18px] bg-vanilla transition-opacity ${open ? 'opacity-0' : ''}`}
+          />
           <span
             className={`h-0.5 w-[18px] bg-vanilla transition-transform ${open ? '-translate-y-[7px] -rotate-45' : ''}`}
           />
@@ -79,7 +85,7 @@ export function Header() {
         }}
       >
         <nav className="flex flex-col gap-1.5">
-          {NAV.map((item) => (
+          {NAV.map(item => (
             <button
               key={item.label}
               onClick={() => go(item.to)}
@@ -91,16 +97,34 @@ export function Header() {
           ))}
         </nav>
         <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[13px] text-vanilla/55">
-          <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 hover:text-brand">
+          <a
+            href={`mailto:${profile.email}`}
+            className="inline-flex items-center gap-2 hover:text-brand"
+          >
             <IconMail className="h-4 w-4" /> {profile.email}
           </a>
-          <a href={profile.links.github} target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:text-brand">
+          <a
+            href={profile.links.github}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 hover:text-brand"
+          >
             <IconGitHub className="h-4 w-4" /> GitHub
           </a>
-          <a href={profile.links.behance} target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:text-brand">
+          <a
+            href={profile.links.behance}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 hover:text-brand"
+          >
             <IconBehance className="h-4 w-4" /> Behance
           </a>
-          <a href={profile.links.linkedin} target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:text-brand">
+          <a
+            href={profile.links.linkedin}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 hover:text-brand"
+          >
             <IconLinkedIn className="h-4 w-4" /> LinkedIn
           </a>
           <span>{profile.location}</span>
