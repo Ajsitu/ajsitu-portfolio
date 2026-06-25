@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type ReactNode, type CSSProperties, type ElementType } from 'react'
 
 /* ------------------------------------------------------------------ */
 /* Reveal - fades/raises children into view on scroll                  */
@@ -37,7 +37,7 @@ export function Reveal({
     io.observe(el)
     return () => io.disconnect()
   }, [])
-  const Comp = Tag as any
+  const Comp = Tag as ElementType
   const base = variant === 'right' ? 'reveal-right' : variant === 'title' ? 'reveal-title' : 'reveal'
   return (
     <Comp ref={ref} className={`${base} ${className}`} style={{ transitionDelay: `${delay}s`, ...style }}>
